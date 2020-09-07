@@ -5,7 +5,7 @@
     <title>Drink Update</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}    {# form 을 통해 넘겨줄 때 반드시 필요 #}
         {{ form.as_p }}     {# 제목과 내용같은 폼 입력항목을 위한 HTML 코드들을 자동으로 생성 #}
         <button type="submit">Update</button>
