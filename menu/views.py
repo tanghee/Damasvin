@@ -15,12 +15,16 @@ class CoffeeCreateView(CreateView):
     template_name = 'menu/drink_create.html'  # 템플릿을 넣을 때는 App 이름 작성
     success_url = reverse_lazy('menu:list')  # html 은 url 로 하겠지만, 지금은 class 이므로 reverse_lazy 함수 사용. 패스 이름 작성
 
+    initial = {'category': 'Coffee'}
+
 
 class BubbleteaCreateView(CreateView):
     model = Bubbletea
     fields = '__all__'
     template_name = 'menu/drink_create.html'
     success_url = reverse_lazy('menu:list')
+
+    initial = {'category': 'Bubbletea'}
 
 
 class DrinkUpdateView(UpdateView):
