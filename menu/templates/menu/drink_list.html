@@ -24,11 +24,13 @@
                 <td>----</td>
                 {% endif %}
                 <td>{{ drink }}</td>
-                <td><a href="">Modify</a></td>
-                <td><a href="">Delete</a></td>
+                <td><a href="{% url 'menu:update' pk=drink.id %}">Modify</a></td>
+                <td><a href="{% url 'menu:delete' pk=drink.id %}">Delete</a></td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+    <a href="{% url 'menu:add_coffee' %}">Add Coffee</a>
+    <a href="{% url 'menu:add_bubbletea' %}">Add Bubbletea</a>
 </body>
 </html>
