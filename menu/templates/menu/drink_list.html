@@ -19,7 +19,7 @@
             {% for drink in drink_list %}
                 <td>{{ forloop.counter }}</td>
                 {% if drink.image != '' %}
-                <td><img src="{{ drink.image.url }}" alt=""></td>
+                <td><img src="{{ drink.image.url }}" alt="" style="height: 80px"></td>
                 {% else %}
                 <td>----</td>
                 {% endif %}
