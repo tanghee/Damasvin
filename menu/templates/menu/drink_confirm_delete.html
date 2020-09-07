@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drink Confirm Delete</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}    {# form 을 통해 넘겨줄 때 반드시 필요 #}
+        {{ drink }}<br>정말 삭제하시겠습니까?
+        <button type="submit">Delete</button>
+        <button type="button" onclick="history.back()">Cancel</button>
+    </form>
+</body>
+</html>
