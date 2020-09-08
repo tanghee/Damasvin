@@ -53,3 +53,9 @@ class OrderResultView(ListView):
         context = super().get_context_data(**kwargs)
         context['total_price'] = Order.objects.all().aggregate(total_price=Sum('price')).get('total_price', 0)
         return context
+
+
+def pay(request):
+    orders = Order.objects.all()
+    orders.delete()
+    return redirect('order:list')
