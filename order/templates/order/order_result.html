@@ -29,6 +29,10 @@
                 <td colspan="2" style="background-color: darkseagreen">{{ total_price }}</td>
             </tr>
             {% endif %}
+            <tr>
+                <td colspan="2"><a href="{% url 'order:pay' %}">지불하기</a></td>
+                <td colspan="2"><button type="button" onclick="history.back()">Cancel</button></td>
+            </tr>
         </tbody>
     </table>
 </body>
