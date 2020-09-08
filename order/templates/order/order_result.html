@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Order List</title>
+    <title>Order Result</title>
 </head>
 <body>
     <table>
@@ -29,21 +29,7 @@
                 <td colspan="2" style="background-color: darkseagreen">{{ total_price }}</td>
             </tr>
             {% endif %}
-            <tr>
-                <td colspan="4"><a href="{% url 'order:result' %}">계산하기</a></td>
-            </tr>
         </tbody>
     </table>
-    <div id="menu">Menu
-    <table>
-        <tbody>
-            <tr>
-                {% for menu in menu_list %}
-                <td><a href="{% url 'order:add' menu_id=menu.id %}">{{ menu }}</a></td>
-                {% endfor %}
-            </tr>
-        </tbody>
-    </table>
-    </div>
 </body>
 </html>
