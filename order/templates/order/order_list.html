@@ -25,5 +25,16 @@
             {% endfor %}
         </tbody>
     </table>
+    <div id="menu">Menu
+    <table>
+        <tbody>
+            <tr>
+                {% for menu in menu_list %}
+                <td><a href="{% url 'order:add' menu_id=menu.id %}">{{ menu }}</a></td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    </div>
 </body>
 </html>
