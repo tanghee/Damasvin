@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Add</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}  {# 해킹을 방지하기 위해 #}
+        {{ form.as_p  }}
+        <button type="submit">Add</button>
+        <button type="button" onclick="history.back()">Cancel</button>
+    </form>
+</body>
+</html>
