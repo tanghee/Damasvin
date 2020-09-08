@@ -23,6 +23,12 @@
                 <td><a href="{% url 'order:delete' pk=order.id %}">Delete</a></td>
             </tr>
             {% endfor %}
+            {% if total_price != None %}
+            <tr>
+                <td colspan="2" style="background-color: darkseagreen">총 금 액</td>
+                <td colspan="2" style="background-color: darkseagreen">{{ total_price }}</td>
+            </tr>
+            {% endif %}
         </tbody>
     </table>
     <div id="menu">Menu
