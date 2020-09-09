@@ -3,6 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Order List</title>
+    <style>
+        .button {
+            width: 100px;
+            height: 100px;
+            background-color: #ffffff;
+            color: black;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            box-shadow: 0 0 8px 0 rgba(0,0,0,0.4);
+        }
+        .button:hover {
+            background-color: #4CAF50;
+            box-shadow: 0 0 0 0;
+            transform: translateY(2px);
+        }
+
+        .button_result {
+            width: 100%;
+            background-color: gold;
+            border: none;
+            color: black;
+            padding: 15px 0px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            box-shadow: 0 0 8px 0 rgba(0,0,0,0.4);
+        }
+        .button_result:hover {
+            box-shadow: 0 0 0 0;
+            transform: translateY(2px);
+        }
+    </style>
 </head>
 <body>
     <table>
@@ -30,7 +70,7 @@
             </tr>
             {% endif %}
             <tr>
-                <td colspan="4"><a href="{% url 'order:result' %}">계산하기</a></td>
+                <td colspan="4"><a href="{% url 'order:result' %}" class="button_result">계산하기</a></td>
             </tr>
         </tbody>
     </table>
@@ -39,7 +79,7 @@
         <tbody>
             <tr>
                 {% for menu in menu_list %}
-                <td><a href="{% url 'order:add' menu_id=menu.id %}">{{ menu }}</a></td>
+                <td><a href="{% url 'order:add' menu_id=menu.id %}" class="button" style="background-image: linear-gradient(white, rgba(0, 0, 0, 0.1) 200%) {% if menu.image != '' %}, url('{{ menu.image.url }}'); background-position: center; background-repeat: no-repeat; background-size: contain; {% endif %}">{{ menu }}</a></td>
                 {% endfor %}
             </tr>
         </tbody>
