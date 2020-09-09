@@ -3,6 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Order Add</title>
+    {# 수량과 컵의 개수를 늘리면 가격이 늘어나는 코드 #}
+    <script>
+        window.onload = function () {
+            let drink_price = {{ drink_price }}   {# drink_price 값을 가져옴 #}
+            let stock = document.querySelector("#id_stock")
+            let cup = document.querySelector("#id_cup")
+            let price = document.querySelector("#id_price")
+            stock.addEventListener('change', () => setPrice())  {# change 이벤트가 발생하면, setPrice를 호출 #}
+            cup.addEventListener('change', () => setPrice())
+
+            function setPrice() {
+                let total_price = drink_price * stock.value
+                if (cup.value == 1) {   {# 0:레귤러 1:점보 #}
+                    total_price += 500 * stock.value
+                }
+                price.value = total_price
+            }
+        }
+    </script>
 </head>
 <body>
     <form action="" method="post">
